@@ -1,21 +1,23 @@
-# ExMon
+# ex_mon
+A simple game developed during an Elixir course. 
+The game is a simple batle between player (you) and the computer.
+Basicaly we have 3 moves (:kick, :punch and :heal),
+You can choose one of them to use each round.
 
-**TODO: Add description**
+# running
+With all Elixir environment installed, go to project folder and run $iex -S mix
 
-## Installation
+# Methods
+The ExMon.create_player/1 is used to create your player, ex:
+me = ExMon.create_player("Jef", :special_kick, :uppercut, :meditate)
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_mon` to your list of dependencies in `mix.exs`:
+Then you can use ExMon.start_game/ to start the game with created player, ex:
+ExMon.start_game(me)
 
-```elixir
-def deps do
-  [
-    {:ex_mon, "~> 0.1.0"}
-  ]
-end
-```
+Finally you can make your move and wait the computer play, use method ExMon.make_move/1, ex:
+ExMon.make_move(:uppercut)
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/ex_mon>.
+You will se a message about the game status, just keep making moves until someone reach 0 points of life.
+
+Enjoy =)
 
